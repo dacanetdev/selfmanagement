@@ -1,0 +1,27 @@
+﻿body {
+    background-color: #041b27;
+    background-color: rgba(4, 27, 39, 0.67);
+    color: white;
+}
+
+.form-inputs {
+    color: black;
+}
+
+.board {
+    padding: 1em;
+    background-color: white;
+    color: black;
+}
+
+.form-control-md {
+    width: 20em;
+}
+
+.remark {
+    padding: 2em;
+    font-size: 3em;
+    font-weight: bold;
+    color: brown;
+
+}

@@ -1,0 +1,26 @@
+﻿<div class="row">
+    <div class="col-md-8">
+        <p>
+            <label>Title:</label> {{book.title}}
+        </p>
+        <p>
+            <label>Author:</label> {{book.author}}
+        </p>
+        <p>
+            <label>Num. Pages:</label> {{book.numPages}}
+        </p>
+        <div>
+            <label>Read Pages:</label> <input type="text" data-ng-model="book.readPages" class="readPages" style="margin-left: 2.4em;" />
+        </div>
+        <div>
+            <label>Missing Reading:</label> <input type="text" data-ng-model="book.missingReading" disabled="disabled" />
+        </div>
+    </div>
+    <div class="col-md-3" data-ng-show="book.isFinished">
+        <i class="fa fa-check-circle fa-5x"></i>
+        <p>
+            <label>Finished Reading on:</label>
+            {{book.finishedReadDate | date:'short'}}
+        </p>
+    </div>
+</div>

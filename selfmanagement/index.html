@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Self Management</title>
+        
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/jquery-ui/ui/jquery-ui.js"></script>
+        <script src="lib/angular.js"></script>
+        <script src="lib/angular-route.js"></script>
+        
+        <script src="bower_components/angular-strap/dist/angular-strap.js"></script>
+        <script src="bower_components/angular-strap/dist/angular-strap.tpl.js"></script>
+        <script src="bower_components/angular-ui/build/angular-ui.js"></script>
+        <script src="bower_components/moment/moment.js"></script>
+        
+        <script src="app/selfmanagement.js"></script>
+        <script src="app/controllers/MenuCtrl.js"></script>
+        <script src="app/controllers/HeaderCtrl.js"></script>
+        <script src="app/controllers/HomeCtrl.js"></script>
+        <script src="app/controllers/ScheduleCtrl.js"></script>
+        <script src="app/controllers/ReadingLogCtrl.js"></script>
+        <script src="app/controllers/FitnessCtrl.js"></script>
+        <script src="app/controllers/FinancesCtrl.js"></script>
+        <script src="app/services/readingLogDataService.js"></script>
+        <script src="app/services/fitnessDataservice.js"></script>
+        <script src="app/directives/directives.js"></script>
+
+        <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+        <link href="bower_components/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet" />
+        <link href="bower_components/angular-ui/build/angular-ui.css" rel="stylesheet" />
+        <link href="bower_components/jquery-ui/themes/base/jquery-ui.css" rel="stylesheet" />
+        <link href="bower_components/fontawesome/css/font-awesome.css" rel="stylesheet" />
+        <link href="styles/site.css" rel="stylesheet" />
+    </head>
+    <body data-ng-app="selfmanagement">
+        <header data-ng-controller="HeaderCtrl">
+            <h1 class="center">SELF MANAGEMENT</h1>
+         </header>
+        <div class= "clearfix row">
+            <div class="clearfix">
+                <div class="col-md-2">
+                    <div class="navbar navbar-default" role="navigation" data-ng-controller="MenuCtrl">
+                        <ul class="nav nav-pills nav-stacked">
+                            <li data-ng-class="{ active: isActive('/home')}"><a data-ng-href="#home">Home</a></li>
+                            <li data-ng-class="{ active: isActive('/schedule')}"><a data-ng-href="#schedule">Schedule</a></li>
+                            <li data-ng-class="{ active: isActive('/readinglog')}"><a data-ng-href="#readinglog">Reading Log</a></li>
+                            <li data-ng-class="{ active: isActive('/fitness')}"><a data-ng-href="#fitness">Fitness</a></li>
+                            <li data-ng-class="{ active: isActive('/finances')}"><a data-ng-href="#finances">Finances</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-9" data-ng-view="">
+                    
+                </div>
+            </div>
+        </div>
+        <footer>
+        </footer>
+        
+    </body>
+</html>

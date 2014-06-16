@@ -1,0 +1,37 @@
+﻿<div class="clearfix panel board">
+    <h3>Reading Log</h3>
+    <div>
+        <!--<pre>{{data | json }}</pre>-->
+        <div class="alert alert-success" data-ng-show="isOpenNewBook">
+            <form>
+                <div class="form-group">
+                    <label>ISBN</label>
+                    <input type="text" class="form-control form-control-md" book-search />
+                </div>
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" class="form-control" data-ng-model="data.NewBook.title" />
+                </div>
+                <div class="form-group">
+                    <label>Author</label>
+                    <input type="text" class="form-control" data-ng-model="data.NewBook.author" />
+                </div>
+                <div class="form-group">
+                    <label>Num. Pages</label>
+                    <input type="text" class="form-control form-control-md" data-ng-model="data.NewBook.numPages" />
+                </div>
+            </form>
+        </div>
+        <div class="pull-right">
+            <button class="btn btn-primary" data-ng-click="openCloseNewBook()" data-ng-show="!isOpenNewBook">Add New Book</button>
+            <div data-ng-show="isOpenNewBook">
+                <button class="btn btn-primary" data-ng-click="openCloseNewBook()">Close</button>
+                <button class="btn btn-primary" data-ng-click="addNewBook()" style="margin-left: 1em;">Add</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="alert alert-info" data-ng-repeat="bookLog in data.BookLogs">
+    <div book-record book="bookLog">
+    </div>
+</div>

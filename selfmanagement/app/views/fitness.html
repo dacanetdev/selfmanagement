@@ -1,0 +1,38 @@
+﻿<div class="panel board">
+    <h3>Fitness</h3>
+    <div class="row">
+        <div class="well col-md-4">
+            <form class="form form-inputs"style="padding-left:2em;">
+                <div class="form-group">
+                    <label for="Genre">Genre</label>
+                    <select class="form-control form-control-md" data-ng-options="genre as genre for genre in data.FitnessModel.genres" data-ng-model="data.FitnessModel.genre" data-ng-change="recalculateCalories()"></select>
+                </div>
+                <div class="form-group">
+                    <label for="Weight">Weight</label>
+                    <input type="text" class="form-control form-control-md" placeholder="Weight in pounds" data-ng-model="data.FitnessModel.weight" data-ng-change="recalculateCalories()" />
+                </div>
+                <div class="form-group">
+                    <label for="Height">Height</label>
+                    <input type="text" class="form-control form-control-md" placeholder="Height in inches" data-ng-model="data.FitnessModel.height" data-ng-change="recalculateCalories()" />
+                </div>
+                <div class="form-group">
+                    <label for="Age">Age</label>
+                    <input class="form-control form-control-md" placeholder="Age" data-ng-model="data.FitnessModel.age" data-ng-change="recalculateCalories()" />
+                </div>
+                <div class="form-group">
+                    <label for="LevelExercise">Level of Exercise</label>
+                    <select class="form-control form-control-md" data-ng-options="levelExercise.level as levelExercise.exercise for levelExercise in data.FitnessModel.levelExercises" data-ng-model="data.FitnessModel.levelExercise" data-ng-change="recalculateCalories()"></select>
+                </div>
+                <div class="form-group">
+                    <label for="Genre">Weight Goal</label>
+                    <select class="form-control form-control-md" data-ng-options="goal as goal for goal in data.FitnessModel.weightGoals" data-ng-model="data.FitnessModel.weightGoal" data-ng-change="recalculateCalories()"></select>
+                </div>
+            </form>
+        </div>
+        <div class="panel col-md-5">
+            <div class="panel-default remark" style="height:100%;" data-ng-show="isCompleted" >
+                {{dailyCalories | number:2}} <span>Calories per Day </span>             
+            </div>
+        </div>
+    </div>
+</div>
